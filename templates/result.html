@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}結果画面{% endblock %}
+{% block title %}결과화면{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
@@ -8,20 +8,20 @@
         <div class="col-md-6 col-lg-5">
             <div class="card shadow border-primary text-center">
                 <div class="card-header bg-primary text-white">
-                    <h3 class="mb-0">📢 結果</h3>
+                    <h3 class="mb-0">📢 결과</h3>
                 </div>
                 <div class="card-body p-4">
                     <h4 class="mb-4">{{ message }}</h4>
 
                     <div class="d-grid">
                         <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg text-white">
-                            <i class="bi bi-arrow-right-circle"></i> 次へ
+                            <i class="bi bi-arrow-right-circle"></i> 다음
                         </a>
                     </div>
                 </div>
                 <div class="card-footer bg-light">
                     <a href="{{ url_for('home') }}" class="text-primary fw-bold">
-                        🔑 ログインページに戻る
+                        🔑 로그인 페이지로 돌아가기
                     </a>
                 </div>
             </div>
