@@ -21,7 +21,7 @@ def login():
         if username in users and users[username] == password:
             return redirect(url_for('index'))
         else:
-            return render_template('result.html', message="ログイン失敗しました。")
+            return render_template('result.html', message="로그인 실패했습니다.")
 
     return redirect(url_for('home'))
 
@@ -32,7 +32,7 @@ def index():
 # ✅ これを追加する！
 @app.route('/run_analysis', methods=['POST'])
 def run_analysis():
-    print("✅ 分析開始ボタンが押されました！")
+    print("✅ 분석 시작 버튼이 눌렸습니다!")
     return redirect(url_for('index'))
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -42,10 +42,10 @@ def register():
         password = request.form.get('password')
 
         if username in users:
-            return render_template('result.html', message="すでに存在するユーザー名です。")
+            return render_template('result.html', message="이미 존재하는 사용자 이름입니다.")
 
         users[username] = password
-        return render_template('result.html', message="登録完了！ログインしてください。")
+        return render_template('result.html', message="등록완료! 로그인해주세요.")
 
     return render_template('register.html')
 
