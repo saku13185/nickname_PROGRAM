@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}로그인{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 100px);">
+    <div class="col-md-5 col-lg-4">
+        <div class="card shadow-lg border-0 login-card-custom">
+            <div class="card-header bg-primary text-white text-center rounded-top">
+                <h3 class="mb-0">🔑 시스템 로그인</h3>
+            </div>
+            <div class="card-body p-4">
+                <form action="{{ url_for('login') }}" method="post">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">사용자 이름</label>
+                        <input type="text" class="form-control" id="username" name="username" required value="admin">
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="form-label">비밀번호</label>
+                        <input type="password" class="form-control" id="password" name="password" required value="password">
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">로그인</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-center text-muted bg-light">
+                <small>테스트 계정: admin / password</small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
