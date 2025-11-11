@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}ログイン{% endblock %}
+{% block title %}로그인{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
@@ -8,28 +8,28 @@
         <div class="col-md-6 col-lg-5">
             <div class="card shadow border-info">
                 <div class="card-header bg-info text-white text-center">
-                    <h3 class="mb-0">🔐 ログイン</h3>
+                    <h3 class="mb-0">🔐 로그인</h3>
                 </div>
                 <div class="card-body p-4">
                     <form action="{{ url_for('login') }}" method="post">
                         <div class="mb-3">
-                            <label for="username" class="form-label fw-bold">ユーザー名</label>
+                            <label for="username" class="form-label fw-bold">ID</label>
                             <input type="text" id="username" name="username" class="form-control" required>
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label fw-bold">パスワード</label>
+                            <label for="password" class="form-label fw-bold">비밀번호</label>
                             <input type="password" id="password" name="password" class="form-control" required>
                         </div>
                         <div class="d-grid mt-4">
                             <button type="submit" class="btn btn-info text-white btn-lg">
-                                <i class="bi bi-box-arrow-in-right"></i> ログイン
+                                <i class="bi bi-box-arrow-in-right"></i> 로그인
                             </button>
                         </div>
                     </form>
                 </div>
                 <div class="card-footer text-center bg-light">
                     <a href="{{ url_for('register') }}" class="text-info fw-bold">
-                        📝 新規登録はこちら
+                        📝 신규등록은 이쪽
                     </a>
                 </div>
             </div>
