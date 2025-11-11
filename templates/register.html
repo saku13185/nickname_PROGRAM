@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}신규등록{% endblock %}
+{% block title %}회원가입{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
@@ -8,12 +8,12 @@
         <div class="col-md-6 col-lg-5">
             <div class="card shadow border-success">
                 <div class="card-header bg-success text-white text-center">
-                    <h3 class="mb-0">📝 신규등록</h3>
+                    <h3 class="mb-0">📝 회원가입</h3>
                 </div>
                 <div class="card-body p-4">
                     <form action="{{ url_for('register') }}" method="post">
                         <div class="mb-3">
-                            <label for="username" class="form-label fw-bold">ID</label>
+                            <label for="username" class="form-label fw-bold">아이디</label>
                             <input type="text" id="username" name="username" class="form-control" required>
                         </div>
                         <div class="mb-3">
@@ -22,14 +22,14 @@
                         </div>
                         <div class="d-grid mt-4">
                             <button type="submit" class="btn btn-success text-white btn-lg">
-                                <i class="bi bi-person-plus"></i> 등록
+                                <i class="bi bi-person-plus"></i> 회원가입
                             </button>
                         </div>
                     </form>
                 </div>
                 <div class="card-footer text-center bg-light">
                     <a href="{{ url_for('home') }}" class="text-success fw-bold">
-                        🔑 로그인은 이쪽
+                        🔑 로그인 페이지로 이동
                     </a>
                 </div>
             </div>
