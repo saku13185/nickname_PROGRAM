@@ -1,14 +1,31 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <title>結果画面</title>
-</head>
-<body>
-    <h2>{{ message }}</h2>
-    <br>
-    <a href="{{ url_for('index') }}">次へ</a>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}結果画面{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow border-primary text-center">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">📢 結果</h3>
+                </div>
+                <div class="card-body p-4">
+                    <h4 class="mb-4">{{ message }}</h4>
+
+                    <div class="d-grid">
+                        <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg text-white">
+                            <i class="bi bi-arrow-right-circle"></i> 次へ
+                        </a>
+                    </div>
+                </div>
+                <div class="card-footer bg-light">
+                    <a href="{{ url_for('home') }}" class="text-primary fw-bold">
+                        🔑 ログインページに戻る
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

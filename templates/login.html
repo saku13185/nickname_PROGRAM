@@ -1,21 +1,39 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <title>ログイン画面</title>
-</head>
-<body>
-    <h2>ログイン</h2>
-    <form action="{{ url_for('login') }}" method="post">
-        <label for="username">ユーザー名:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">パスワード:</label><br>
-        <input type="password" id="password" name="password"><br><br>
-        <input type="submit" value="ログイン">
-    </form>
-    <br>
-    <a href="{{ url_for('register') }}">新規登録はこちら</a>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}ログイン{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow border-info">
+                <div class="card-header bg-info text-white text-center">
+                    <h3 class="mb-0">🔐 ログイン</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form action="{{ url_for('login') }}" method="post">
+                        <div class="mb-3">
+                            <label for="username" class="form-label fw-bold">ユーザー名</label>
+                            <input type="text" id="username" name="username" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label fw-bold">パスワード</label>
+                            <input type="password" id="password" name="password" class="form-control" required>
+                        </div>
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-info text-white btn-lg">
+                                <i class="bi bi-box-arrow-in-right"></i> ログイン
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center bg-light">
+                    <a href="{{ url_for('register') }}" class="text-info fw-bold">
+                        📝 新規登録はこちら
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
